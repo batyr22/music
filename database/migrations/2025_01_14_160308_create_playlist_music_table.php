@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('playlist_id');
-            $table->foreign('playlist_id')->references('id')->on('playlists');
+            $table->foreign('playlist_id')->references('id')->on('playlists')->cascadeOnDelete();
 
             $table->unsignedBigInteger('music_id');
-            $table->foreign('music_id')->references('id')->on('music');
+            $table->foreign('music_id')->references('id')->on('music')->cascadeOnDelete();
 
             $table->timestamps();
         });

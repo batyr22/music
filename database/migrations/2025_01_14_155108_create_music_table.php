@@ -14,13 +14,13 @@ return new class extends Migration {
             $table->id();
 
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories')->cascadeOnDelete();
 
             $table->unsignedBigInteger('artist_id');
-            $table->foreign('artist_id')->references('id')->on('artists');
+            $table->foreign('artist_id')->references('id')->on('artists')->cascadeOnDelete();
 
             $table->unsignedBigInteger('album_id')->nullable();
-            $table->foreign('album_id')->references('id')->on('albums');
+            $table->foreign('album_id')->references('id')->on('albums')->cascadeOnDelete();
 
             $table->string('name');
             $table->string('audio')->nullable();
